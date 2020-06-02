@@ -15,28 +15,28 @@ int main(int argc, char* argv[])
 	string name;
 	if (argc == 1)
 	{
-		cout << "ÇëÊäÈëÎÄ¼şÃû£¡";
+		cout << "è¯·è¾“å…¥æ–‡ä»¶åï¼";
 		cin >> name;
 		name += ".csv";
 	}
 	else
 		name = argv[1];
-	//¶ÁÈ¡ÖĞ¿ØÇåµ¥
+	//è¯»å–ä¸­æ§æ¸…å•
 	vector<vector<string>> order;
 	vector<vector<string>> pipei;
-	double sum1 = 0, sum2 = 0;		//Í³¼ÆË¦µ¥Á¿¡¢ÊÜÀíÁ¿
-	map<string, int> itemize_num_success{ pair<string, int>("Íâºô", 0) };			//°´´¥µãÍ³¼Æ
-	map<string, int> itemize_num{ pair<string, int>("Íâºô", 0) };
-	map<string, int> name_num_success{ pair<string, int>("ÌáËÙ", 0) };				//°´Ãû³ÆÍ³¼Æ
-	map<string, int> name_num_DFP{ pair<string, int>("ÌáËÙ", 0) };
-	map<string, int> name_num_LDZ{ pair<string, int>("ÌáËÙ", 0) };
-	map<string, int> name_num_WTD{ pair<string, int>("ÌáËÙ", 0) };
-	map<string, int> name_num_YQX{ pair<string, int>("ÌáËÙ", 0) };
-	map<string, int> name_num_ZCZ{ pair<string, int>("ÌáËÙ", 0) };
-	map<string, int> name_num_QT{ pair<string, int>("ÌáËÙ", 0) };
-	map<string, int> name_num{ pair<string, int>("ÌáËÙ", 0) };
+	double sum1 = 0, sum2 = 0;		//ç»Ÿè®¡ç”©å•é‡ã€å—ç†é‡
+	map<string, int> itemize_num_success{ pair<string, int>("å¤–å‘¼", 0) };			//æŒ‰è§¦ç‚¹ç»Ÿè®¡
+	map<string, int> itemize_num{ pair<string, int>("å¤–å‘¼", 0) };
+	map<string, int> name_num_success{ pair<string, int>("æé€Ÿ", 0) };				//æŒ‰åç§°ç»Ÿè®¡
+	map<string, int> name_num_DFP{ pair<string, int>("æé€Ÿ", 0) };
+	map<string, int> name_num_LDZ{ pair<string, int>("æé€Ÿ", 0) };
+	map<string, int> name_num_WTD{ pair<string, int>("æé€Ÿ", 0) };
+	map<string, int> name_num_YQX{ pair<string, int>("æé€Ÿ", 0) };
+	map<string, int> name_num_ZCZ{ pair<string, int>("æé€Ÿ", 0) };
+	map<string, int> name_num_QT{ pair<string, int>("æé€Ÿ", 0) };
+	map<string, int> name_num{ pair<string, int>("æé€Ÿ", 0) };
 	set<string> other_id;
-	//´ò¿ªÒªÊä³öµÄÎÄ¼ş     
+	//æ‰“å¼€è¦è¾“å‡ºçš„æ–‡ä»¶     
 	string z_title, token, m_countent;
 	int num1 = 0;
 	ifstream iFile2("chu.csv", ios::in);
@@ -69,8 +69,8 @@ int main(int argc, char* argv[])
 		}
 	}
 	iFile2.close();
-	cout << "chu³É¹¦" << endl;
-	//´ò¿ªÒªÊä³öµÄÎÄ¼ş 
+	cout << "chuæˆåŠŸ" << endl;
+	//æ‰“å¼€è¦è¾“å‡ºçš„æ–‡ä»¶ 
 	ifstream iFile(name, ios::in);
 	num1 = 0;
 	int pro_name_num = 0, order_sta_num = 0, script_id = 0;
@@ -79,11 +79,11 @@ int main(int argc, char* argv[])
 	while (getline(sstr, token, ','))
 	{
 		order.push_back(vector<string>{token});
-		if (token == "ÉÌÆ·Ãû³Æ")
+		if (token == "å•†å“åç§°")
 			pro_name_num = num1;
-		else if (token == "¶©µ¥×´Ì¬")
+		else if (token == "è®¢å•çŠ¶æ€")
 			order_sta_num = num1;
-		else if (token == "½Å±¾Id")
+		else if (token == "è„šæœ¬Id")
 			script_id = num1;
 		++num1;
 	}
@@ -118,8 +118,8 @@ int main(int argc, char* argv[])
 		}
 	}
 	iFile.close();
-	cout << "×ÜÇåµ¥³É¹¦" << endl;
-	//ÊÜÀí³É¹¦
+	cout << "æ€»æ¸…å•æˆåŠŸ" << endl;
+	//å—ç†æˆåŠŸ
 	if (order.size() < 2) return -1;
 	/*for (int i = 0; i < 3; ++i) cout << order[1][i];
 	return -1;*/
@@ -128,50 +128,50 @@ int main(int argc, char* argv[])
 		bool is_join = true;
 		if (order[pro_name_num][i] == "")
 			continue;
-		//ÉÌÆ·Ãû³ÆÊÇ·ñÀàchu±íÀïÃæ
-		if (order[order_sta_num][i] == "Â¼µ¥Íê³É")
+		//å•†å“åç§°æ˜¯å¦ç±»chuè¡¨é‡Œé¢
+		if (order[order_sta_num][i] == "å½•å•å®Œæˆ")
 		{
 			for (int j = 0; j < row1; ++j)
 			{
 				order_success[j].push_back(order[j][i]);
 			}
 		}
-		else if (order[order_sta_num][i] == "´ı·ÖÅÉ" || order[order_sta_num][i] == "´ıÂ¼µ¥Ô¤´¦Àí" || order[order_sta_num][i] == "Â¼µ¥·¢ËÍÖĞ" || order[order_sta_num][i] == "µÈ´ıÂ¼µ¥")
+		else if (order[order_sta_num][i] == "å¾…åˆ†æ´¾" || order[order_sta_num][i] == "å¾…å½•å•é¢„å¤„ç†" || order[order_sta_num][i] == "å½•å•å‘é€ä¸­" || order[order_sta_num][i] == "ç­‰å¾…å½•å•")
 		{
 			for (int j = 0; j < row1; ++j)
 			{
 				order_DFP[j].push_back(order[j][i]);
 			}
 		}
-		else if (order[order_sta_num][i] == "Â¼µ¥ÖĞ")
+		else if (order[order_sta_num][i] == "å½•å•ä¸­")
 		{
 			for (int j = 0; j < row1; ++j)
 			{
 				order_LDZ[j].push_back(order[j][i]);
 			}
 		}
-		else if (order[order_sta_num][i] == "ÎÊÌâµ¥")
+		else if (order[order_sta_num][i] == "é—®é¢˜å•")
 		{
 			for (int j = 0; j < row1; ++j)
 			{
 				order_WTD[j].push_back(order[j][i]);
 			}
 		}
-		else if (order[order_sta_num][i] == "ÒÑÈ¡Ïû")
+		else if (order[order_sta_num][i] == "å·²å–æ¶ˆ")
 		{
 			for (int j = 0; j < row1; ++j)
 			{
 				order_YQX[j].push_back(order[j][i]);
 			}
 		}
-		else if (order[order_sta_num][i] == "Ôİ´æÖĞ")
+		else if (order[order_sta_num][i] == "æš‚å­˜ä¸­")
 		{
 			for (int j = 0; j < row1; ++j)
 			{
 				order_ZCZ[j].push_back(order[j][i]);
 			}
 		}
-		else if (order[order_sta_num][i] == "ÆäËû")
+		else if (order[order_sta_num][i] == "å…¶ä»–")
 		{
 			for (int j = 0; j < row1; ++j)
 			{
@@ -193,16 +193,16 @@ int main(int argc, char* argv[])
 			other_id.insert(order[script_id][i]);
 		}
 	}
-	cout << "ÆäËû³É¹¦" << endl;
+	cout << "å…¶ä»–æˆåŠŸ" << endl;
 	time_t now = time(0);
 	tm* ltm = localtime(&now);
 	ofstream oFile;
-	string file_name = "ÖÜ±¨" + to_string(1 + ltm->tm_mon) + to_string(ltm->tm_mday) + ".csv";
-	oFile.open(file_name, ios::out);    // ÕâÑù¾ÍºÜÈİÒ×µÄÊä³öÒ»¸öĞèÒªµÄexcel ÎÄ¼ş 
-	// pipei£ºÉÌÆ·Ãû³Æ¡¢·ÖÀà¡¢´¥µã
-	//order£ºÖĞ¿Øid¡¢¶©µ¥×´Ì¬¡¢ÉÌÆ·Ãû³Æ
-	//ÆäËûid
-	oFile << "Ë¦µ¥Á¿£º" << endl << "ÉÌÆ·Ãû³Æ" << ",·ÖÀà" << ",´¥µã" << ",µ¥Á¿" << endl;
+	string file_name = "å‘¨æŠ¥" + to_string(1 + ltm->tm_mon) + to_string(ltm->tm_mday) + ".csv";
+	oFile.open(file_name, ios::out);    // è¿™æ ·å°±å¾ˆå®¹æ˜“çš„è¾“å‡ºä¸€ä¸ªéœ€è¦çš„excel æ–‡ä»¶ 
+	// pipeiï¼šå•†å“åç§°ã€åˆ†ç±»ã€è§¦ç‚¹
+	//orderï¼šä¸­æ§idã€è®¢å•çŠ¶æ€ã€å•†å“åç§°
+	//å…¶ä»–id
+	oFile << "ç”©å•é‡ï¼š" << endl << "å•†å“åç§°" << ",åˆ†ç±»" << ",è§¦ç‚¹" << ",å•é‡" << endl;
 	for (int i = 1; i < pipei[0].size(); ++i)
 	{
 
@@ -233,14 +233,14 @@ int main(int argc, char* argv[])
 		if (is_join)
 			name_num.insert(pair<string, int>(pipei[1][i], count1));
 	}
-	oFile << endl << "´¥µã,µ¥Á¿" << endl;
+	oFile << endl << "è§¦ç‚¹,å•é‡" << endl;
 	for (auto c = itemize_num.begin(); c != itemize_num.end(); ++c)
 		oFile << c->first << "," << c->second << endl;
-	oFile << endl << "·ÖÀà,µ¥Á¿" << endl;
+	oFile << endl << "åˆ†ç±»,å•é‡" << endl;
 	for (auto c = name_num.begin(); c != name_num.end(); ++c)
 		oFile << c->first << "," << c->second << endl;
 	oFile << endl;
-	oFile << "ÊÜÀíÁ¿£º" << endl << "ÉÌÆ·Ãû³Æ" << ",·ÖÀà" << ",´¥µã" << ",µ¥Á¿" << endl;
+	oFile << "å—ç†é‡ï¼š" << endl << "å•†å“åç§°" << ",åˆ†ç±»" << ",è§¦ç‚¹" << ",å•é‡" << endl;
 	for (int i = 1; i < pipei[0].size(); ++i)
 	{
 
@@ -366,37 +366,37 @@ int main(int argc, char* argv[])
 		is_join = true;
 		count1 = 0;
 	}
-	oFile << endl << "´¥µã,µ¥Á¿" << endl;
+	oFile << endl << "è§¦ç‚¹,å•é‡" << endl;
 	for (auto c = itemize_num_success.begin(); c != itemize_num_success.end(); ++c)
 		oFile << c->first << "," << c->second << endl;
-	oFile << endl << "Â¼µ¥Íê³É£ºµ¥Á¿" << endl;
+	oFile << endl << "å½•å•å®Œæˆï¼šå•é‡" << endl;
 	for (auto ite = name_num_success.begin(); ite != name_num_success.end(); ++ite)
 		oFile << ite->first << "," << ite->second << endl;
-	oFile << endl << "ÒÑÈ¡Ïû£º,µ¥Á¿" << endl;
+	oFile << endl << "å·²å–æ¶ˆï¼š,å•é‡" << endl;
 	for (auto ite = name_num_YQX.begin(); ite != name_num_YQX.end(); ++ite)
 		oFile << ite->first << "," << ite->second << endl;
-	oFile << endl << "Ôİ´æÖĞ£º,µ¥Á¿" << endl;
+	oFile << endl << "æš‚å­˜ä¸­ï¼š,å•é‡" << endl;
 	for (auto ite = name_num_ZCZ.begin(); ite != name_num_ZCZ.end(); ++ite)
 		oFile << ite->first << "," << ite->second << endl;
-	oFile << endl << "´ı·ÖÅÉ£º,µ¥Á¿" << endl;
+	oFile << endl << "å¾…åˆ†æ´¾ï¼š,å•é‡" << endl;
 	for (auto ite = name_num_DFP.begin(); ite != name_num_DFP.end(); ++ite)
 		oFile << ite->first << "," << ite->second << endl;
-	oFile << endl << "Â¼µ¥ÖĞ£º,µ¥Á¿" << endl;
+	oFile << endl << "å½•å•ä¸­ï¼š,å•é‡" << endl;
 	for (auto ite = name_num_LDZ.begin(); ite != name_num_LDZ.end(); ++ite)
 		oFile << ite->first << "," << ite->second << endl;
-	oFile << endl << "ÆäËû£º,µ¥Á¿" << endl;
+	oFile << endl << "å…¶ä»–ï¼š,å•é‡" << endl;
 	for (auto ite = name_num_QT.begin(); ite != name_num_QT.end(); ++ite)
 		oFile << ite->first << "," << ite->second << endl;
-	oFile << endl << "ÎÊÌâµ¥£º,µ¥Á¿" << endl;
+	oFile << endl << "é—®é¢˜å•ï¼š,å•é‡" << endl;
 	for (auto ite = name_num_WTD.begin(); ite != name_num_WTD.end(); ++ite)
 		oFile << ite->first << "," << ite->second << endl;
-	oFile << endl << "ÒÑ¹ÒÆğ£¿£º" << endl;
+	oFile << endl << "å·²æŒ‚èµ·ï¼Ÿï¼š" << endl;
 	for (auto ite = order_YGQ.begin(); ite != order_YGQ.end(); ++ite)
 		oFile << *ite << endl;
-	oFile << endl << "ÆäËûÉÌÆ·Ãû³Æ£º" << endl;
+	oFile << endl << "å…¶ä»–å•†å“åç§°ï¼š" << endl;
 	for (auto ite = other_id.begin(); ite != other_id.end(); ++ite)
 		oFile << *ite << endl;
 	oFile.close();
-	cout << "Éú³É³É¹¦" << endl;
+	cout << "ç”ŸæˆæˆåŠŸ" << endl;
 	return 0;
 }
