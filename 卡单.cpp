@@ -18,13 +18,13 @@ int main(int argc, char* argv[])
 	string name;
 	if (argc == 1)
 	{
-		cout << "ÇëÊäÈëÎÄ¼şÃû£¡";
+		cout << "è¯·è¾“å…¥æ–‡ä»¶åï¼";
 		std::cin >> name;
 		name += ".csv";
 	}
 	else
 		name = argv[1];
-	HWND hw = FindWindow("ConsoleWindowClass", NULL);							//»ñÈ¡´°¿Ú¾ä±ú
+	HWND hw = FindWindow("ConsoleWindowClass", NULL);							//è·å–çª—å£å¥æŸ„
 	std::ifstream iFile(name, std::ios::in);
 	string z_title, token, m_countent, fenxi, fenlei;
 	string m_url("http://132.108.207.12:8071/imconsole/uploads/");
@@ -34,17 +34,17 @@ int main(int argc, char* argv[])
 	std::vector<int> must_num;
 	std::map<string, std::vector<string>> pip_res
 	{
-		//{"hd\\fdx_pl",{"ÖªÊ¶¿âÒ³Ãæ¼ÓÔØÒì³£","ÍøÂç/ÏµÍ³/Éı¼¶ÎÊÌâ"}},
-		{"dyd\\tmbxl99ydyd_7zb\\11.png",{"¿Í»§¶©µ¥¸úÏÂµ¥ÈËĞÅÏ¢²»Ò»ÖÂ","Êı¾İÎÊÌâ"}},
-		{"ÌìÃ¨²»ÍË¶©",{"Ì×²Í»¥³â","Êı¾İÎÊÌâ"}},
-		{"¶©µ¥ÊÕ·Ñ½ğ¶î²»Ò»ÖÂ",{"¶©µ¥ÊÕ·Ñ½ğ¶î²»Ò»ÖÂ","Êı¾İÎÊÌâ"}},
-		{"¸ù¾İ²éÑ¯Ìõ¼şÎ´ÕÒµ½¿Í»§ĞÅÏ¢",{"¸ù¾İ²éÑ¯Ìõ¼şÎ´ÕÒµ½¿Í»§ĞÅÏ¢","Êı¾İÎÊÌâ"}},
-		{"ºÏ»ïÈËµÇÂ¼Ê§°Ü",{"ÍøÂçÑÓ³Ù","ÍøÂç/ÏµÍ³/Éı¼¶ÎÊÌâ"}},
-		{"image\\\\bss\\\\14.png",{"ÍøÂçÑÓ³Ù","ÍøÂç/ÏµÍ³/Éı¼¶ÎÊÌâ"}},
-		{"dyd\\tmbxl99ydyd_7zb\\04.png",{"ÍøÂçÑÓ³Ù","ÍøÂç/ÏµÍ³/Éı¼¶ÎÊÌâ"}}
+		//{"hd\\fdx_pl",{"çŸ¥è¯†åº“é¡µé¢åŠ è½½å¼‚å¸¸","ç½‘ç»œ/ç³»ç»Ÿ/å‡çº§é—®é¢˜"}},
+		{"dyd\\tmbxl99ydyd_7zb\\11.png",{"å®¢æˆ·è®¢å•è·Ÿä¸‹å•äººä¿¡æ¯ä¸ä¸€è‡´","æ•°æ®é—®é¢˜"}},
+		{"å¤©çŒ«ä¸é€€è®¢",{"å¥—é¤äº’æ–¥","æ•°æ®é—®é¢˜"}},
+		{"è®¢å•æ”¶è´¹é‡‘é¢ä¸ä¸€è‡´",{"è®¢å•æ”¶è´¹é‡‘é¢ä¸ä¸€è‡´","æ•°æ®é—®é¢˜"}},
+		{"æ ¹æ®æŸ¥è¯¢æ¡ä»¶æœªæ‰¾åˆ°å®¢æˆ·ä¿¡æ¯",{"æ ¹æ®æŸ¥è¯¢æ¡ä»¶æœªæ‰¾åˆ°å®¢æˆ·ä¿¡æ¯","æ•°æ®é—®é¢˜"}},
+		{"åˆä¼™äººç™»å½•å¤±è´¥",{"ç½‘ç»œå»¶è¿Ÿ","ç½‘ç»œ/ç³»ç»Ÿ/å‡çº§é—®é¢˜"}},
+		{"image\\\\bss\\\\14.png",{"ç½‘ç»œå»¶è¿Ÿ","ç½‘ç»œ/ç³»ç»Ÿ/å‡çº§é—®é¢˜"}},
+		{"dyd\\tmbxl99ydyd_7zb\\04.png",{"ç½‘ç»œå»¶è¿Ÿ","ç½‘ç»œ/ç³»ç»Ÿ/å‡çº§é—®é¢˜"}}
 	};
 	std::set<string> my_script_id;
-	std::ifstream iFile3("¿¨µ¥Æ¥Åä.csv", std::ios::in);
+	std::ifstream iFile3("å¡å•åŒ¹é….csv", std::ios::in);
 	while (getline(iFile3, m_countent))
 	{
 		int c = 0;
@@ -61,7 +61,7 @@ int main(int argc, char* argv[])
 		pip_res[a[0]] = join_in;
 	}
 	iFile3.close();
-	std::ifstream iFile4("Æ¥Åä½Å±¾ID.csv", std::ios::in);
+	std::ifstream iFile4("åŒ¹é…è„šæœ¬ID.csv", std::ios::in);
 	while (getline(iFile4, m_countent))
 	{
 		int c = 0;
@@ -74,24 +74,24 @@ int main(int argc, char* argv[])
 	std::stringstream sstr(z_title);
 	string image_url, m_order_id, uuru,err,scr_id;
 	static string cz_next = "", err_old, scr_id_old;
-	while (getline(sstr, token, ','))		//»ñÈ¡ĞèÒªÊä³öµÄĞÅÏ¢
+	while (getline(sstr, token, ','))		//è·å–éœ€è¦è¾“å‡ºçš„ä¿¡æ¯
 	{
-		if(token=="SCRIPT_ID"|| token == "ORDER_ID" || token == "ERR_DESC"|| token == "ERR_URL" || token == "Òì³£Á´½Ó" || token == "¶©µ¥id" || token == "½Å±¾id" || token == "Òì³£ÏêÇé")
+		if(token=="SCRIPT_ID"|| token == "ORDER_ID" || token == "ERR_DESC"|| token == "ERR_URL" || token == "å¼‚å¸¸é“¾æ¥" || token == "è®¢å•id" || token == "è„šæœ¬id" || token == "å¼‚å¸¸è¯¦æƒ…")
 			must_num.push_back(num);
-		if (token == "ERR_URL" || token == "Òì³£Á´½Ó")
+		if (token == "ERR_URL" || token == "å¼‚å¸¸é“¾æ¥")
 			image_int = num;
-		else if (token == "ORDER_ID" || token == "¶©µ¥id")
+		else if (token == "ORDER_ID" || token == "è®¢å•id")
 			order_int = num;
-		else if (token == "SCRIPT_ID" || token == "½Å±¾id")
+		else if (token == "SCRIPT_ID" || token == "è„šæœ¬id")
 			script_int = num;
-		else if (token == "ERR_DESC" || token == "Òì³£ÏêÇé")
+		else if (token == "ERR_DESC" || token == "å¼‚å¸¸è¯¦æƒ…")
 			err_int = num;
-		else if (num == 0 && token == "·ñ")
+		else if (num == 0 && token == "å¦")
 			is_all = true;
 		++num;
 	}
 	std::ofstream oFile;
-	oFile.open("¿¨µ¥Êä³ö.csv", std::ios::out);
+	oFile.open("å¡å•è¾“å‡º.csv", std::ios::out);
 	while (getline(iFile, m_countent))
 	{
 		static bool is_huanhang = false;
@@ -119,7 +119,7 @@ int main(int argc, char* argv[])
 				continue;
 			}
 
-			if (token.find("\"") == 0 && token.find_last_of("\"") == 0)		//µÚÒ»¸öÊÇÒıºÅÇÒÕÒ²»µ½±ğµÄÒıºÅ£¬ÅĞ¶ÏÎª»»ĞĞÒıºÅ,Ò²ÓĞ¿ÉÄÜÎª»»ĞĞÒıºÅ½áÊø
+			if (token.find("\"") == 0 && token.find_last_of("\"") == 0)		//ç¬¬ä¸€ä¸ªæ˜¯å¼•å·ä¸”æ‰¾ä¸åˆ°åˆ«çš„å¼•å·ï¼Œåˆ¤æ–­ä¸ºæ¢è¡Œå¼•å·,ä¹Ÿæœ‰å¯èƒ½ä¸ºæ¢è¡Œå¼•å·ç»“æŸ
 			{
 				token.erase(0, 1);
 				if (!is_huanhang)
@@ -204,7 +204,7 @@ int main(int argc, char* argv[])
 			continue;
 		if (scr_id == "hd\\fdx_pl")
 		{
-			oFile << m_order_id << "," << image_url << "," << "ÖªÊ¶¿âÒ³Ãæ¼ÓÔØÒì³£" << "," << "ÍøÂç/ÏµÍ³/Éı¼¶ÎÊÌâ" << endl;
+			oFile << m_order_id << "," << image_url << "," << "çŸ¥è¯†åº“é¡µé¢åŠ è½½å¼‚å¸¸" << "," << "ç½‘ç»œ/ç³»ç»Ÿ/å‡çº§é—®é¢˜" << endl;
 			continue;
 		}
 		for (auto it = pip_res.begin(); it != pip_res.end(); ++it)
@@ -223,24 +223,24 @@ int main(int argc, char* argv[])
 		ShellExecute(NULL, "open", (m_url + image_url + ".jpg").c_str(), NULL, NULL, SW_SHOWNOACTIVATE);
 		//ShellExecute(NULL, "open", "www.baidu.com", NULL, NULL, SW_SHOWNOACTIVATE);
 		Sleep(600);
-		SetWindowPos(hw, HWND_TOPMOST, 850, 200, 0, 0, SWP_NOSIZE || SW_SHOW);		//ÉèÖÃ´°¿Ú
+		SetWindowPos(hw, HWND_TOPMOST, 850, 200, 0, 0, SWP_NOSIZE || SW_SHOW);		//è®¾ç½®çª—å£
 		SetForegroundWindow(hw);	
 		SetFocus(hw);
 		Sleep(400);
-		while (hw != GetForegroundWindow())											//ÅĞ¶Ïµ±Ç°½¹µã
+		while (hw != GetForegroundWindow())											//åˆ¤æ–­å½“å‰ç„¦ç‚¹
 		{
 			Sleep(200);
 			SetForegroundWindow(hw);
 			SetFocus(hw);
-		}//»ñÈ¡½¹µã
+		}//è·å–ç„¦ç‚¹
 		cout << endl;
-		if (cz_next != "ÏÂ")
+		if (cz_next != "ä¸‹")
 			std::cin >> uuru;
 		if (uuru != "q")
 		{
-			if (uuru == "ÏÂ")
+			if (uuru == "ä¸‹")
 				cz_next = uuru;
-			if (cz_next == "ÏÂ")
+			if (cz_next == "ä¸‹")
 			{
 				if (scr_id_old == scr_id && err_old == err)
 				{
@@ -260,19 +260,19 @@ int main(int argc, char* argv[])
 				}
 					
 			}
-			if (uuru != "c" && uuru != "Í¬" && uuru != "ÊÇ")
+			if (uuru != "c" && uuru != "åŒ" && uuru != "æ˜¯")
 			{
 				fenxi = uuru;
 				std::cin >> fenlei;
 			}
-			if (fenlei == "Êı¾İ" || fenlei == "ÆäËû")
-				fenlei += "ÎÊÌâ";
-			else if (fenlei == "ÍøÂç")
-				fenlei = "ÍøÂç/ÏµÍ³/Éı¼¶ÎÊÌâ";
-			else if (fenlei == "¹ÜÀí")
-				fenlei = "¹ÜÀí/²Ù×÷²»¹æ·¶";
-			else if (fenlei == "½Å±¾")
-				fenlei = "½Å±¾/³ÌĞòÎÊÌâ";
+			if (fenlei == "æ•°æ®" || fenlei == "å…¶ä»–")
+				fenlei += "é—®é¢˜";
+			else if (fenlei == "ç½‘ç»œ")
+				fenlei = "ç½‘ç»œ/ç³»ç»Ÿ/å‡çº§é—®é¢˜";
+			else if (fenlei == "ç®¡ç†")
+				fenlei = "ç®¡ç†/æ“ä½œä¸è§„èŒƒ";
+			else if (fenlei == "è„šæœ¬")
+				fenlei = "è„šæœ¬/ç¨‹åºé—®é¢˜";
 			oFile << m_order_id << "," << image_url <<  "," << fenxi << "," << fenlei << endl;
 			scr_id_old = scr_id;
 			err_old = err;
@@ -283,9 +283,9 @@ int main(int argc, char* argv[])
 	oFile.close();
 	iFile.close();
 	char ch;
-	cout << "Éú³É³É¹¦£¬ÊÇ·ñ´ò¿ªÎÄ¼ş£¿";
+	cout << "ç”ŸæˆæˆåŠŸï¼Œæ˜¯å¦æ‰“å¼€æ–‡ä»¶ï¼Ÿ";
 	std::cin >> ch;
 	if (ch == 'y')
-		system("start ¿¨µ¥Êä³ö.csv");
+		system("start å¡å•è¾“å‡º.csv");
 	return 0;
 }
